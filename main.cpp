@@ -9,14 +9,24 @@
 #define C 1
 using namespace std;
 
-double fun (double x, double y);
+double fun (double y);
 double Euler_1 (double t0, double q0, double tk, double s);
-void Euler_all (int s, double dt);
+void Euler_all (int s, double tk, double s, double t0, double q0);
 
-/*void Euler_1 (double t0, double q0, double qk, double dt) {
-
-};*/
-
+void fun (double y) {
+        double f;
+        f= (E/R)-(y/(C*R));
+        return f;        
+};
+void Euler_1 (double q0, double t0, double dt) {
+        double q;
+        q=q0+dt*fun(q0);
+        return q;
+        cout<<"t: "<<t0+dt<<" q: "<<q<<endl;
+};
+void Euler_all (int s, double tk, double s, double t0, double q0) {
+        
+};
 
 int main () {
         cout<<"Enter q0"<<endl;
